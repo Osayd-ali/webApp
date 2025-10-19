@@ -86,8 +86,8 @@
 </head>
 <body>
     <div class="login-container">
-        <h2>Welcome to login page ${name}</h2>
-        <form id = "loginForm">
+        <h2>Welcome to login page</h2>
+        <form id = "loginForm" method ="post" action ="/login"> <!-- specifying method as post so that credentials are not visible in URL -->
             <div class = "input-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required>
