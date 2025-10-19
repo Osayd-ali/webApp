@@ -86,7 +86,7 @@
 </head>
 <body>
     <div class="login-container">
-        <h2>Login</h2>
+        <h2>Welcome to login page ${name}</h2>
         <form id = "loginForm">
             <div class = "input-group">
                 <label for="username">Username</label>
