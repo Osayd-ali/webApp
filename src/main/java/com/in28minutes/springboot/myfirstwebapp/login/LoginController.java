@@ -20,7 +20,11 @@ public class LoginController {
     }
 
     @RequestMapping(value = "login", method = RequestMethod.POST) // or @PostMapping("/login")we can use either one to signify that login runs only for POST requests.
-    public String showWelcomePage(){
+    public String showWelcomePage(@RequestParam String username, @RequestParam String password, ModelMap model) {
+        // Capturing name and password and put it in the model map to send it to the view so that we can display it there.
+        model.put("username", username);
+        model.put("password", password);
         return "welcome";
     }
+    // Even form data can be captured using RequestParam, we will capture our login form data using a ModelAttribute
 }

@@ -87,6 +87,8 @@
 <body>
     <div class="login-container">
         <h2>Welcome page</h2>
+        <div>Hello ${username}, Welcome to our website</div>
+        <div> Here's your password : ${password}</div>
     </div>
 </body>
 </html>
