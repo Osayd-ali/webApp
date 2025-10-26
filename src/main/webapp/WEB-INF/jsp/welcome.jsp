@@ -88,6 +88,7 @@
     <div class="login-container">
         <h2>Welcome page</h2>
         <div>Hello ${username}, Welcome to our website</div>
+        <div><a href="list-todos">View your todos</a></div>
     </div>
 </body>
 </html>

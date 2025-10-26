@@ -86,7 +86,7 @@
 </head>
 <body>
     <div class="login-container">
-        <h2>Welcome to the page</h2>
+        <h2>Welcome ${username} to the page</h2>
         <div> Your Todos are ${todos}</div>
 
         </form>
