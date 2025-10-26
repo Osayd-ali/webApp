@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class LoginController {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
+    private AuthenticationService authenticationService;
     //http://localhost:8080/login?name=Osayd
     // Model : Whenever you want to send data from the controller to the view, you use Model
     @RequestMapping(value = "login", method = RequestMethod.GET) // or @GetMapping("/login") we can use either one to signify that login runs only for GET requests.
@@ -22,9 +23,15 @@ public class LoginController {
     @RequestMapping(value = "login", method = RequestMethod.POST) // or @PostMapping("/login")we can use either one to signify that login runs only for POST requests.
     public String showWelcomePage(@RequestParam String username, @RequestParam String password, ModelMap model) {
         // Capturing name and password and put it in the model map to send it to the view so that we can display it there.
-        model.put("username", username);
-        model.put("password", password);
-        return "welcome";
+        //Authentication
+        //username=in28minutes
+        //password=dummy // If these are the credentials, then redirect to welcome page, else show login page again.
+        if(authenticationService.authenticate(username, password)) {
+            model.put("username", username);
+            model.put("password", password);
+            return "welcome";
+        }
+        return "login";
     }
     // Even form data can be captured using RequestParam, we will capture our login form data using a ModelAttribute
 }
