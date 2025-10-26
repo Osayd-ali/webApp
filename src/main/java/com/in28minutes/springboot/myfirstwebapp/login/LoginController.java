@@ -37,6 +37,7 @@ public class LoginController {
             model.put("password", password);
             return "welcome";
         }
+        model.put("errorMessage", "Invalid Credentials! Please try again.");
         return "login";
     }
     // Even form data can be captured using RequestParam, we will capture our login form data using a ModelAttribute
