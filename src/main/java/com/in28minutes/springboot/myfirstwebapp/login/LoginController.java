@@ -2,6 +2,7 @@ package com.in28minutes.springboot.myfirstwebapp.login;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +11,11 @@ import org.springframework.web.bind.annotation.*;
 public class LoginController {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
     private AuthenticationService authenticationService;
+
+    @Autowired
+    public LoginController(AuthenticationService authenticationService) {
+        this.authenticationService = authenticationService;
+    }
     //http://localhost:8080/login?name=Osayd
     // Model : Whenever you want to send data from the controller to the view, you use Model
     @RequestMapping(value = "login", method = RequestMethod.GET) // or @GetMapping("/login") we can use either one to signify that login runs only for GET requests.
