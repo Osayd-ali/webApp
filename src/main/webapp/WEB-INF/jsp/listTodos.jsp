@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log in Page</title>
+    <title>Todo Page</title>
     <style>
         * {
             margin: 0;
@@ -40,59 +40,22 @@
             margin-bottom: 20px;
         }
 
-        label {
-            display: block;
-            margin-bottom: 5px;
-            color: #555;
+        .container{
+            text-align: center;
+            margin-bottom: 20px;
             font-weight: bold;
-        }
-
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 14px;
-            transition: border-color 0.3s;
-        }
-
-        input[type="text"]:focus,
-        input[type="password"]:focus {
-            outline: none;
-            border-color: #667eea;
-        }
-
-        button {
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        button:hover {
-            transform: translateY(-2px);
-        }
-
-        button:active {
-            transform: translateY(0);
+            font-size: 30px;
         }
     </style>
 </head>
 <body>
     <div class="login-container">
         <h2>Welcome ${username} to the page</h2>
-        <div> Your Todos are ${todos}</div>
+        <div class="container"> Your Todos are:</div>
         <table>
             <thead>
                 <tr>
-                    <th>id</th>
+                    <th>Id</th>
                     <th>Description</th>
                     <th>Target Date</th>
                     <th>Is Done?</th>
